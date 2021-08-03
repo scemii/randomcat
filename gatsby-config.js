@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    description: "dummy desc",
     siteUrl: "https://www.yourdomain.tld",
     title: "gatsby random website",
   },
@@ -22,7 +23,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images/`,
       },
       __key: "images",
     },
@@ -33,6 +34,13 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content/`,
+        name: `blogs`,
+      },
     },
   ],
 };
